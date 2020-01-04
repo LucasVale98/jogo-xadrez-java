@@ -1,5 +1,6 @@
 package application;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import javax.swing.border.Border;
@@ -30,6 +31,9 @@ public class Program {
 				
 				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);	
 			}catch (ChessException e) {
+				System.out.println(e.getMessage());
+				scanner.nextLine();
+			}catch (InputMismatchException e) {
 				System.out.println(e.getMessage());
 				scanner.nextLine();
 			}
